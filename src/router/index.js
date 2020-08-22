@@ -18,7 +18,18 @@ export const constantRoutes = [
         meta: {
           // active: 'login',
         }
-      }
+      },
+      {
+        path: 'bookDetail',
+        title: '图书详情',
+        icon: '',
+        name: 'bookDetail',
+        component: () => import('@/views/shop/bookDetail'),
+        hidden: true,
+        meta: {
+        }
+      },
+      
     ]
   },
   

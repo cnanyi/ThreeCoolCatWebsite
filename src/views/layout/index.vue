@@ -1,6 +1,6 @@
 <template>
 <el-container style="position:relative">
-  <el-header :height="62">
+  <el-header height="62">
     <main-header/>
   </el-header>
   <el-main>
@@ -76,6 +76,7 @@ export default {
 }
 .el-main {
   margin-top: 62px;
-  padding:0px
+  padding:0px;
+  background: #fdfdfd;
 }
 </style>

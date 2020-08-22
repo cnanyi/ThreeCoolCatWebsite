@@ -4,6 +4,8 @@
             <el-row>
                 <el-col :span="6">
                     <div style="margin-top: 10px">友情链接</div>
+                    <div v-for="item in friendLinks" :key="item.id" style="margin-top: 10px">
+                        <a :href="item.url" style="color:#fff" target="_blank">{{ item.title}}</a></div>
                 </el-col>
                 <el-col :span="6">
                     <div style="margin-top: 10px">服务协议</div>
@@ -36,8 +38,23 @@
     </div>
 </template>
 <script>
+import {friendLinks} from '@/api/home'
 export default {
-    
+    data() {
+        return {
+            friendLinks: []
+        }
+    },
+    mounted() {
+        this.getFriendLinks()
+    },
+    methods: {
+        getFriendLinks() {
+            friendLinks().then(res=>{
+                this.friendLinks = res;
+            })
+        }
+    }
 }
 </script>
 <style lang="less" scoped>
