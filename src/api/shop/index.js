@@ -11,3 +11,13 @@ export function getBooks(params) {
     })
 }
 
+/**
+ * 视频后台接口
+ */
+export function getVideos(params) {
+    return request({
+        url: '/shop/api/videos/',
+        method: 'get',
+        params
+    })
+}

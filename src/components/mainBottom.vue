@@ -51,7 +51,7 @@ export default {
     methods: {
         getFriendLinks() {
             friendLinks().then(res=>{
-                this.friendLinks = res;
+                this.friendLinks = res.results;
             })
         }
     }
