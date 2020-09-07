@@ -43,7 +43,26 @@
                 </div>
             </el-col>
         </el-row>
-       
+       <el-row type="flex" justify="center" class="grid-row even">
+            
+            <el-col class="grid-block">
+                <el-divider>名师风采</el-divider>
+                <div v-for="teacher in teacherList" :key="teacher.id" class="grid-content grid-book">
+                    <div style="line-height:160px">
+                        <router-link :to="{path: '/Detail', query: {teacherId: teacher.id}}">
+                            <img :src="getCoverUrl(teacher.cover)" :alt="teacher.name" width="100px" />
+                        </router-link>
+                    </div>
+                    <div>
+                        <div style="font-size:12px">{{teacher.name}}</div>
+                    </div>
+                </div>
+                
+                <div class="grid-content grid-book" style="font-size:20px; line-height:160px;text-align:center;color:#666">
+                    <router-link to="/teacherList">更多</router-link>
+                </div>
+            </el-col>
+        </el-row>
         <el-row type="flex" justify="center" class="grid-row odd">
             <el-col class="grid-block">
                  <el-divider class="odd">精品图书</el-divider>
@@ -65,27 +84,27 @@
                 </div>
             </el-col>
         </el-row>
-
         <el-row type="flex" justify="center" class="grid-row even">
             
             <el-col class="grid-block">
-                <el-divider>名师风采</el-divider>
-                <div v-for="teacher in teacherList" :key="teacher.id" class="grid-content grid-book">
+                <el-divider>线上视频</el-divider>
+                <div v-for="video in videoList" :key="video.id" class="grid-content grid-book">
                     <div style="line-height:160px">
-                        <router-link :to="{path: '/Detail', query: {teacherId: teacher.id}}">
-                            <img :src="getCoverUrl(teacher.cover)" :alt="teacher.name" width="100px" />
+                        <router-link :to="{path: '/Detail', query: {teacherId: video.id}}">
+                            <img :src="getCoverUrl(video.cover)" :alt="video.name" width="100px" />
                         </router-link>
                     </div>
                     <div>
-                        <div style="font-size:12px">{{teacher.name}}</div>
+                        <div style="font-size:12px">{{video.name}}</div>
                     </div>
                 </div>
                 
                 <div class="grid-content grid-book" style="font-size:20px; line-height:160px;text-align:center;color:#666">
-                    <router-link to="/teacherList">更多</router-link>
+                    <router-link to="/videoList">更多</router-link>
                 </div>
             </el-col>
         </el-row>
+        
     </div>
 </template>
 <script>
